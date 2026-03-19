@@ -83,9 +83,9 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend", policy =>
     {
         policy.WithOrigins(
-            "http://localhost:3000",   // frontend lokalny HTTP
-            "https://localhost:3000",  // frontend lokalny HTTPS
-            "https://transport-delays.pages.dev"  // docelowa domena produkcyjna
+            "http://localhost:3000",
+            "https://localhost:3000",
+            "https://docelowadomena"
         )
         .AllowAnyHeader()
         .AllowAnyMethod();
@@ -97,7 +97,6 @@ builder.Services.AddHostedService<JourneyBackgroundService>();
 
 var app = builder.Build();
 
-// Middleware
 // Middleware
 if (app.Environment.IsDevelopment())
 {

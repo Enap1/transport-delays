@@ -75,7 +75,7 @@ export default function AuthProvider({ children }) {
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem("auth");
+    sessionStorage.removeItem("auth");
   };
 
   return (

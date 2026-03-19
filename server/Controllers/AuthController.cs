@@ -48,7 +48,7 @@ namespace server.Controllers
         public async Task<IActionResult> Register(RegisterRequest request)
         {
             if (await _context.Users.AnyAsync(u => u.Email == request.Email))
-                return BadRequest("Użytkownik o tym adresie e-mail już istnieje.");
+                return BadRequest("");
 
             var token = Guid.NewGuid().ToString();
             var user = new User
